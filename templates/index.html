@@ -31,12 +31,12 @@
 
                 {% endif %}
 
-                <form action = "{{ url_for("index")}}" method="post">
+                <form action = "{{ url_for('index')}}" method="post">
                     <label for="text">Quel est votre sexe ?</label>
                     <input name="sexe" type="text" class="form-control" placeholder="Femme ou Homme ?" required>
                     
                     <label for="number">Quel âge avez-vous ?</label>
-                    <input name="age" type"number" class="form-control" placeholder="Age" required>
+                    <input name="age" type="number" class="form-control" placeholder="Age" required>
                     
                     <br>
                     <a href="" class="btn">Valider</a>

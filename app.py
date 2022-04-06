@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, url_for, render_template, request, session
 from main import *
 app = Flask(__name__)
