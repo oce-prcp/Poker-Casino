@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% block head %}
+<title>Confirmation age</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for("gfg")}}" method="post">
+	<input type="text" name=age placeholder="Votre age">
+	<button type=submit>Confirmer</button>
+</form>
+
+{% endblock %}
+

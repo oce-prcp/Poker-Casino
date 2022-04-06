@@ -236,6 +236,7 @@ def combinaisons(tirageFinal,mise):
     if QuinteFlushRoyale(tirageFinal) == True:
         gain = mise * 250
         result = "Vous avez un quinte flush royale, vous gagnez {} euros".format(gain)  
+        A
         return gain,result
 
     elif quinteFlush(tirageFinal) == True:
