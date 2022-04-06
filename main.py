@@ -289,7 +289,7 @@ def video_poker():
 
         #---------reccueil des renseignements---------
 
-    sexe = input("Bonjour, veuillez renseigner votre sexe.(Homme/Femme)").lower()
+    #sexe = input("Bonjour, veuillez renseigner votre sexe.(Homme/Femme)").lower()
     age = int(input("Veuillez saisir votre âge s'il vous plaît."))
     
         #--------traitement des renseignements--------
@@ -335,4 +335,6 @@ def video_poker():
         if rejouer == "non" or "nan" or "nope" or "non merci":
             print("Voici votre bankroll:",bankroll,"euros merci de votre visite et à bientôt !")
             break
-video_poker()
+        
+if __name__ == "__main__":
+    video_poker()

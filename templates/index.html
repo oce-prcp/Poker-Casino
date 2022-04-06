@@ -8,21 +8,39 @@
 
     <title>Poker Casino</title>
 </head>
+
 <body>
     <div class="container">
         <h1><span class="title">I</span>PSSI <span class="title">P</span>oker</h1>
+
         <div class="clearfix"></div>
+
         <div class="card card-settings">
+
             <div class="card-header">
                 Questions
             </div>
+
             <div class="card-body">
-                <label for="text">Quel est ton sexe ?</label>
-                <input type="text" class="form-control" placeholder="Femme ou Homme ?">
-                <label for="number">Quel âge avez-vous ?</label>
-                <input type"number" class="form-control" placeholder="Age">
-                <br>
-                <a href="#" class="btn">Valider</a>
+
+                {%if session["message1"] %}
+
+                <div>
+                    {{session["message1"]}}
+                </div>
+
+                {% endif %}
+
+                <form action = "{{ url_for("index")}}" method="post">
+                    <label for="text">Quel est votre sexe ?</label>
+                    <input name="sexe" type="text" class="form-control" placeholder="Femme ou Homme ?" required>
+                    
+                    <label for="number">Quel âge avez-vous ?</label>
+                    <input name="age" type"number" class="form-control" placeholder="Age" required>
+                    
+                    <br>
+                    <a href="" class="btn">Valider</a>
+                </form>
             </div>
         </div>
     </div>
