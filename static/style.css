@@ -1,14 +1,62 @@
-*{
-	margin:0;
-	padding:0;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-	background-color: #212529;
-
+body{
+	background-color: #1a2332!important;
+	color: white !important;
 }
 
 
 .title{
-	text-align:center;
+	text-align: center;
 	color: #9fef00!important;
 }
+
+
+.centre{
+	position: relative;
+	left: 50%;
+}
+
+
+input{
+	display: block;
+	font-size: 15px;
+  	padding: 5px;
+	text-align: center;
+}
+
+label{
+	display: block;
+	font-size: 20px;
+  	padding: 5px;
+	color: #fff;
+
+}
+#age{
+	background-color: #fff;
+}
+
+#sexe{
+	background-color: #fff;
+}
+
+.clearfix {
+	margin-top: 60px;
+}
+
+.card-settings {
+	width: 100%;
+	background: #141d2b!important;
+	max-width: 600px;
+	position: relative;
+	left: 27%;
+	/* il faut soustraire du poucentage la taille de la card*/
+	
+}
+
+
+.btn {
+	background-color: #9fef00 !important;
+}
+
+.greenText {
+	color: #fff;
+} 
