@@ -24,7 +24,8 @@ def index() :
         else:
              return render_template('index.html', message="Vous n'êtes pas majeur")
     else:
-        return render_template('index.html', message="Les autres genre ne sont pas accepté")
+        return render_template('index.html', message="Les autres genre ne sont pas acceptés")
+
 
 @app.route('/play', methods=['GET'])
 def play():
@@ -34,6 +35,7 @@ def play():
     session['lol'] = lol
 
     return render_template('play.html')
+
 
 @app.route('/logout', methods=['GET'])
 def logout():
