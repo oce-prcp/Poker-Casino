@@ -1,6 +1,14 @@
-*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}
+*{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background-color: #212529;
+
+}
+
 
 .title{
 	text-align:center;
-	color: rgb(37, 160, 0);
+	color: #9fef00!important;
 }
