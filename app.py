@@ -14,13 +14,15 @@ def accueil():
 def index() :
     sexe = request.form['sexe']
     age = int(request.form['age'])
+    session['Bankroll'] = int(request.form.get('bankroll'))
 
     sexes = ["femme", "homme"]
     if sexe.lower() in sexes:
         if age >= 18:
-            random_id = random.randint(10000, 20000)
-            session['id'] = random_id
-            return redirect('/bankroll', 302)
+            if session['Bankroll'] >= 1:
+                return redirect('/bankroll', 302)
+            else:
+                return render_template('index.html', message="Faites pas le clochard")
         else:
              return render_template('index.html', message="Vous n'êtes pas majeur")
     else:
@@ -31,17 +33,16 @@ def index() :
 def bankroll():
     confirmation = 0
     if request.method == "POST":
-        bankroll = int(request.form.get('bankroll'))
         mise = int(request.form.get('mise'))
         while confirmation != 1:
-            if bankroll <= 0 or mise <= 0:
+            if mise <= 0:
                  return render_template('bankroll.html', message="Veuillez inserer une valeur superieur a 0")
-            elif bankroll >= 1 and mise >= 1:
-                confirmation += 1
-                return redirect('/play', 302)
-        
-        if session['id'] == None:
-            return redirect('/', 302)
+            elif mise >= 1:
+                if mise <= session['Bankroll']: 
+                    confirmation += 1
+                    return redirect('/play', 302)
+                else:
+                    return render_template('bankroll.html', message="Veuillez ne pas depasser votre bankroll")
     
     return render_template('bankroll.html')
 
@@ -51,13 +52,14 @@ def play():
     return render_template('play.html')
 
 
-@app.route('/logout', methods=['GET'])
-def logout():
-    if session['id'] != None:
-        session['id'] = None
-        return redirect('/', 302)
-    else:
-        return redirect('/', 302)
+#@app.route('/logout', methods=['GET'])
+
+#def logout():
+#    if session['id'] != None:
+#        session['id'] = None
+#        return redirect('/', 302)
+#    else:
+#       return redirect('/', 302)
 
 
 
