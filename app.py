@@ -54,6 +54,11 @@ def play():
     return render_template('play.html')
 
 
+@app.route('/a')
+def a():
+    session.clear()
+    return redirect(url_for('index'))
+
 #@app.route('/logout', methods=['GET'])
 
 #def logout():
