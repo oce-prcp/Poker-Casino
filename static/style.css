@@ -9,6 +9,11 @@ body{
 	color: #9fef00!important;
 }
 
+.title-t{
+	text-align: center;
+	border-bottom: 2px solid #9fef00;
+}
+
 
 .centre{
 	position: relative;
