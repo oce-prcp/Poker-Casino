@@ -29,11 +29,14 @@ def index() :
 
 @app.route('/play', methods=['GET'])
 def play():
+
+    bankroll = request.form.get['bankroll']
+    mise = request.form.get['mise']
+
+
     if session['id'] == None:
        return redirect('/', 302)
-
-    session['lol'] = lol
-
+    
     return render_template('play.html')
 
 

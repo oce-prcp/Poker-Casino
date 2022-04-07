@@ -1,7 +1,5 @@
 import random
 
-lol = 23
-
 #------------------PREMIER TIRAGE---------------
 
 def premier_tirage(deck):   
