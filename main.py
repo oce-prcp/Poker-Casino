@@ -287,7 +287,7 @@ def combinaisons(tirageFinal,mise):
 
 def video_poker():
 
-    bankroll = int(input("Veuillez saisir une branroll :"))
+    #bankroll = int(input("Veuillez saisir une branroll :"))
 
         #---------mise en route de la machine---------
 
@@ -312,6 +312,6 @@ def video_poker():
         if rejouer == "non" or "nan" or "nope" or "non merci":
             print("Voici votre bankroll:",bankroll,"euros merci de votre visite et à bientôt !")
             break
-        
+
 if __name__ == "__main__":
     video_poker()

@@ -1,7 +1,39 @@
 <!DOCTYPE html>
-{% block head %}
-{% endblock %}
-
-{% block container %}
-<p>hello world !</p>
-{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Play Poker</title>
+</head>
+<body>
+    <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
+    <div class="header-playground">
+    </div>
+    <br>
+    {% if message %}
+    <div class="error">
+	    {{message}}
+    </div>
+    {% endif %}
+    <div class="card-playground">
+        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+    </div>
+    <div class="card-playground">
+	    {% for i in session['tirage1'] %}
+	    <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+	    {% endfor %}
+    </div>
+    <br>
+    <form method="POST">
+        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
+        <br>
+        <input class="btn" id="input-btn" type="submit" value="Play">
+    </form>
+</body>
+</html>
