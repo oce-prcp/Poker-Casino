@@ -24,14 +24,13 @@ def index() :
         if age >= 18:
             random_id = random.randint(10000, 20000)
             session['id'] = random_id
-            return redirect('/play', 302)
+            return redirect(url_for('play'))
         else:
             return render_template('index.html', message="Vous n'êtes pas majeur")
     else:
         return render_template('index.html', message="Les autres genre ne sont pas acceptés")
 
 #------------------------------PAGE PLAY---------------------------
-
 @app.route('/play', methods=['GET','POST'])
 def play():
     bankroll = int(request.form['bankroll'])
@@ -45,7 +44,7 @@ def play():
     
     return render_template('play.html')
 
-#------------------------------LOGOUT---------------------------
+# #------------------------------LOGOUT---------------------------
 
 @app.route('/logout', methods=['GET'])
 def logout():
