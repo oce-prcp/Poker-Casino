@@ -31,7 +31,7 @@ def index():
         else:
             return render_template('index.html', message="Vous n'êtes pas majeur")
     else:
-        return render_template('index.html', message="Les autres genre ne sont pas acceptés")
+        return render_template('index.html', message="Les autres genres ne sont pas acceptés")
 
 #------------------------------PAGE PLAY---------------------------
 @app.route('/play',methods=['GET','POST'])
@@ -43,11 +43,12 @@ def play():
     if request.method == "POST":
         session['bet'] = int(request.form.get('bet'))
         if session['bet'] <= session['Bankroll']:
+            session['Bankroll'] = session['Bankroll'] - session['bet']
             tirage1, deck1 = premier_tirage(deck)
             session['tirage1'] = tirage1
             session['deck1'] = deck1
         else:
-            return render_template('play.html', message="Veuillez ne pas depasser votre bankroll")
+            return render_template('play.html', message="Veuillez ne pas dépasser votre bankroll")
     
 
 

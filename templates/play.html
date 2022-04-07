@@ -41,10 +41,11 @@
     <form method="POST">
         <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
         <br>
-        {% if session['mise'] %}
+        {% if session['bet'] %}
 
         <div>
-            {{session['mise']}}
+            {{session['bet']}}
+            {{session['Bankroll']}}
         </div>
 
         {% endif %}
