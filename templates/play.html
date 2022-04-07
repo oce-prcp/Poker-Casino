@@ -20,9 +20,24 @@
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
     </div>
     <br>
+    
+    {% if session['erreur_mise'] %}
+    <div>
+        {{session['erreur_mise']}}
+    </div>
+    {% endif %}
+
+    <br>
     <form method="POST">
-        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise">
+        <input class="bet-input" name="mise" type="number" min="1" placeholder="Entre le montant de ta mise">
         <br>
+        {% if session['mise'] %}
+
+        <div>
+            {{session['mise']}}
+        </div>
+
+        {% endif %}
         <input class="btn" id="input-btn" type="submit" value="Play">
     </form>
 </body>
