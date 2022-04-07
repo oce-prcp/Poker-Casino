@@ -25,14 +25,14 @@ body{
 input{
 	display: block;
 	font-size: 15px;
-  	padding: 5px;
+	padding: 5px;
 	text-align: center;
 }
 
 label{
 	display: block;
 	font-size: 20px;
-  	padding: 5px;
+	padding: 5px;
 	color: #fff;
 
 }
