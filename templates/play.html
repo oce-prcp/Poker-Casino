@@ -11,6 +11,7 @@
     <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
     <div class="header-playground">
     </div>
+    <br>
     <div class="card-playground">
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
@@ -20,9 +21,9 @@
     </div>
     <br>
     <form method="POST">
-        <input name="bet" type="number" min="1" placeholder="Enter your bet">
+        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise">
         <br>
-        <input type="submit" value="Play">
+        <input class="btn" id="input-btn" type="submit" value="Play">
     </form>
 </body>
 </html>

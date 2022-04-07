@@ -61,6 +61,12 @@ label{
 
 .btn {
 	background-color: #9fef00 !important;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	width: 100px;
+	color: #fff;
 }
 
 .greenText {
@@ -68,15 +74,33 @@ label{
 } 
 
 
-.card-playground{
+.card-playground {
 	text-align: center;
 }
 
-.card-img{
-	max-width: 150px;
+.card-img {
+	max-width: 120px;
 	max-height: 100%;
 	text-align: center;
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 70px;
+}
+
+.bet-input {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	width: 280px;
+}
+
+#input-btn {
+	text-align: center;
+	margin-left: 908px;
+	margin-right: auto;
+	height: 40px;
+	width: 100px;
+	color: #fff;
 }
