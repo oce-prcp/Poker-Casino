@@ -12,12 +12,22 @@
     <div class="header-playground">
     </div>
     <br>
+    {% if message %}
+    <div class="error">
+        {{message}}
+    </div>
+    {% endif %}
     <div class="card-playground">
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
         <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+    </div>
+    <div class="card-playground">
+        {% for i in session['tirage1'] %}
+        <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+        {% endfor %}
     </div>
     <br>
     
@@ -29,7 +39,7 @@
 
     <br>
     <form method="POST">
-        <input class="bet-input" name="mise" type="number" min="1" placeholder="Entre le montant de ta mise">
+        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
         <br>
         {% if session['mise'] %}
 
