@@ -1,2 +1,11 @@
 <h1>o</h1>
-<p>{{session['lol']}}</p>
+<form>
+    <input name="bankroll" type="number" class="form-control" placeholder="Veuillez saisir une bankroll" required>
+    <input name="mise" type="number" class="form-control" placeholder="Veuillez saisir une mise" required>
+</form>
+
+<div>
+    {{%if bankroll %}}
+    {{bankroll}}
+    {{% endif %}}
+</div>
