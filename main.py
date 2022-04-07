@@ -1,5 +1,7 @@
 import random
 
+lol = 23
+
 #------------------PREMIER TIRAGE---------------
 
 def premier_tirage(deck):   
@@ -286,29 +288,6 @@ def combinaisons(tirageFinal,mise):
 #---------------------------JEU-----------------------
 
 def video_poker():
-
-        #---------reccueil des renseignements---------
-
-    #sexe = input("Bonjour, veuillez renseigner votre sexe.(Homme/Femme)").lower()
-    age = int(input("Veuillez saisir votre âge s'il vous plaît."))
-    
-        #--------traitement des renseignements--------
-
-    if age < 18:
-        print("Désolé, vous ne pouvez pas jouer avant d'avoir 18 ans.")
-        return
-    
-    elif age > 110 and sexe == "homme":
-        print("Vous êtes mort monsieur, que faites-vous ici ?")
-        return
-
-    elif age > 110 and sexe == "femme":
-        print("Vous êtes morte madame, que faites-vous ici ?")
-        return
-
-    else:
-        print("Bienvenue au Video Poker 2000")
-
 
     bankroll = int(input("Veuillez saisir une branroll :"))
 
