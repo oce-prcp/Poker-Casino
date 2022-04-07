@@ -17,31 +17,30 @@
         {{message}}
     </div>
     {% endif %}
+
     <div class="card-playground">
-        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-        <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+        {% for i in session['tirage1'] %}
+        <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+        {% endfor %}
     </div>
-    
+
     <br>
-    
-    {% if session['erreur_mise'] %}
-    <div>
-        {{session['erreur_mise']}}
-    </div>
-    {% endif %}
 
     <br>
     <form method="POST">
-        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
         <br>
 
-        {% if session['deck2'] %}
         <input type="text" name="choix_carte" placeholder="Garder la carte?">
-        {{session['carte']}}
+        
+        {% for carte in session['jeu'] %}
+        {{carte}}
+
+        {% if session['choix1'] == "y" %}
+        {{session['jeu'].append(session['carte'])}}
+
+
         {% endif %}
+        {% endfor %}
         <br>
 
         <div>
