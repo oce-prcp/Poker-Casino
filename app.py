@@ -64,18 +64,10 @@ def play():
 
 @app.route('/play_2', methods=['GET','POST'])
 def play_2():
-    
     if request.method == "POST":
-        jeu_1 = choix_carte(session['deck'])
-        session['jeu'] = jeu_1
-
-
-        for session['carte'] in session['tirage1']:
-            session['choix1'] = request.form.get('choix_carte')
-            if session['choix1'] == "y":
-                session['jeu'].append(session['carte'])
-
-        print(session['jeu'])
+        session['i'] = request.form.getlist('i')
+        print(session['i'])
+        
 
 
     return render_template('play_2.html')
@@ -93,5 +85,13 @@ def a():
     session.clear()
     return redirect(url_for('index'))
 
+#@app.route('/logout', methods=['GET'])
+
+#def logout():
+#    if session['id'] != None:
+#        session['id'] = None
+#        return redirect('/', 302)
+#    else:
+#       return redirect('/', 302)
 if __name__ == '__main__':
     app.run(debug=True)

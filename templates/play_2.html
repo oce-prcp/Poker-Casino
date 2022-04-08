@@ -11,21 +11,22 @@
     <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
     <div class="header-playground">
     </div>
-
-
-
+    <br>
     {% if message %}
     <div class="error">
         {{message}}
     </div>
     {% endif %}
 
-
+    <form method="POST">
     <div class="card-playground">
         {% for i in session['tirage1'] %}
         <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-        {% endfor %}
+	<input type="checkbox" id="{{i}}" name="i" value="{{i}}">
+	{% endfor %}
+        <input class="btn" id="input-btn" type="submit" value="Play">
     </div>
+<<<<<<< HEAD
 
 
     <br>
@@ -42,9 +43,23 @@
     <div class="mise-style-t">
     <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
     </div>
+=======
+   </form>
+
     <br>
 
-    <input class="btn" id="input-btn" type="submit" value="Play">
-    </form>
+>>>>>>> 1afc0c866208eea844b95b6f899b8b95d897e61b
+    <br>
+        <br>
+
+        <input type="text" name="choix_carte" placeholder="Garder la carte?">
+        
+        <br>
+
+        <div>
+            <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+        </div>
+        <br>
+
 </body>
 </html>
