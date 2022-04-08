@@ -11,12 +11,15 @@
     <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
     <div class="header-playground">
     </div>
-    <br>
+
+
+
     {% if message %}
     <div class="error">
         {{message}}
     </div>
     {% endif %}
+
 
     <div class="card-playground">
         {% for i in session['tirage1'] %}
@@ -24,31 +27,24 @@
         {% endfor %}
     </div>
 
-    <br>
 
     <br>
     <form method="POST">
-        <br>
+    <br>
 
-        <input type="text" name="choix_carte" placeholder="Garder la carte?">
-        
-        {% for carte in session['jeu'] %}
-        {{carte}}
-
-        {% if session['choix1'] == "y" %}
-        {{session['jeu'].append(session['carte'])}}
+    {{session['jeu']}}
+    <input type="text" name="choix_carte" placeholder="Garder la carte?">
 
 
-        {% endif %}
-        {% endfor %}
-        <br>
 
-        <div>
-            <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
-        </div>
-        <br>
+    <br>
 
-        <input class="btn" id="input-btn" type="submit" value="Play">
+    <div>
+    <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+    </div>
+    <br>
+
+    <input class="btn" id="input-btn" type="submit" value="Play">
     </form>
 </body>
 </html>
