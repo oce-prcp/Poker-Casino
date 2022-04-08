@@ -66,20 +66,23 @@ def play():
 def play_2():
     if request.method == "POST":
         session['i'] = request.form.getlist('i')
-        print(session['i'])
+        
+        return redirect(url_for('deuxieme_tirage'))
         
 
 
     return render_template('play_2.html')
 
-
-
-        #session['tirage_final'] = deuxieme_tirage(session['jeu'],deck_apres_1er_tirage)
-        #session['valeur'], session['couleur'] = decomp(session['tirage_final'])
-        #session['gain'], session['result'] = combinaisons(session['tirage_final'], session['bet'])
-        #session['Bankroll'] = session['Bankroll'] + session['gain']
-
-
+@app.route('/deuxieme_tirage', methods=['GET','POST'])
+def deuxieme_tirage(): 
+    carteAtirer = 5 - len(session['i'])
+    print(session['i'])
+    tiragedeux = random.sample(session['deck'], carteAtirer)
+    session['tirageFinal'] = session['i'] + tiragedeux
+    
+    print(session['tirageFinal']) 
+    return render_template('deuxieme_tirage.html')
+    
 @app.route('/a')
 def a():
     session.clear()

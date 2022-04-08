@@ -38,12 +38,6 @@
         <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
         <br>
 
-        {% if session['deck2'] %}
-        <input type="text" name="choix_carte" placeholder="Garder la carte?">
-        {{session['carte']}}
-        {% endif %}
-        <br>
-
         <div>
             <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
         </div>
