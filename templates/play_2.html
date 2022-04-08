@@ -26,21 +26,21 @@
 	{% endfor %}
         <input class="btn" id="input-btn" type="submit" value="Play">
     </div>
-
-
-    <br>
-    <form method="POST">
-    <br>
-
-    {{session['jeu']}}
-    <input class="mise-style" type="text" name="choix_carte" placeholder="Garder la carte ?">
+   </form>
 
     <br>
 
-    <div class="mise-style-t">
-    <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
-    </div>
-
     <br>
+        <br>
+
+        <input type="text" name="choix_carte" placeholder="Garder la carte?">
+        
+        <br>
+
+        <div>
+            <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+        </div>
+        <br>
+
 </body>
 </html>
