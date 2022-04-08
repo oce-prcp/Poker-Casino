@@ -12,7 +12,7 @@ body{
 .title-t{
 	text-align: center;
 	border-bottom: 2px solid #9fef00;
-	text-shadow: 3px 2px 2px #9fef00;
+	text-shadow: 3px 2px 2px #9fef007e;
 }
 
 
@@ -22,11 +22,13 @@ body{
 }
 
 
+
 input{
 	display: block;
 	font-size: 15px;
 	padding: 5px;
 	text-align: center;
+	height: auto;
 }
 
 label{
@@ -66,7 +68,7 @@ label{
 	margin-right: auto;
 	height: 40px;
 	width: 100px;
-	color: #fff;
+	color: #141d2b;
 }
 
 .greenText {
@@ -76,6 +78,8 @@ label{
 
 .card-playground {
 	text-align: center;
+	display: block;
+	justify-content: center;
 }
 
 .card-img {
