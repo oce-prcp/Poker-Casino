@@ -9,38 +9,36 @@
 </head>
 <body>
     <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
-    <div class="header-playground">
-    </div>
+
     <br>
+
     {% if message %}
     <div class="error">
         {{message}}
     </div>
     {% endif %}
 
+    <h1>Choisissez les cartes à garder:</h1>
+
     <form method="POST">
-    <div class="card-playground">
-        {% for i in session['tirage1'] %}
-        <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-	<input type="checkbox" id="{{i}}" name="i" value="{{i}}">
-	{% endfor %}
-        <input class="btn" id="input-btn" type="submit" value="Play">
-    </div>
-   </form>
-
-    <br>
-
-    <br>
-        <br>
-
-        <input type="text" name="choix_carte" placeholder="Garder la carte?">
-        
-        <br>
-
-        <div>
-            <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+        <div class="card-playground">
+            {% for i in session['tirage1'] %}
+            <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+	        <input type="checkbox" id="{{i}}" name="i" value="{{i}}">
+	        {% endfor %}
+            <input class="btn" id="input-btn" type="submit" value="Play">
         </div>
-        <br>
+    </form>
 
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+    </div>
+
+    <br>
 </body>
 </html>

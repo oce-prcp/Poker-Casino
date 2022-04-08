@@ -7,25 +7,28 @@
 {% endblock %}
 
 <body>
-{% block container %}
-<h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
-    <div class="header-playground">
-    </div>
+    {% block container %}
+    <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
     <br>
     {% if message %}
     <div class="error">
-        {{message}}
+    {{message}}
     </div>
     {% endif %}
 
+    <div class="header-playground">
+        <h1>Voici votre main finale:</h1>
+    </div>
+
     <div class="card-playground">
-{% for i in session['tirageFinal'] %}
-<img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-{% endfor %}
-</div>
-        <div>
-            <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
-        </div>
-        <br>
+        {% for i in session['tirageFinal'] %}
+        <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+        {% endfor %}
+    </div>
+
+    <div>
+        <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
+    </div>
+    <br>
 {% endblock %}
 </body>

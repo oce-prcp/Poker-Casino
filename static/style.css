@@ -82,6 +82,10 @@ label{
 	justify-content: center;
 }
 
+.cards-play_2{
+	display: inline;
+}
+
 .card-img {
 	max-width: 120px;
 	max-height: 100%;

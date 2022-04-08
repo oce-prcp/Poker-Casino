@@ -42,14 +42,13 @@ def play():
     
     if request.method == "POST":
         session['bet'] = int(request.form.get('bet'))
+
         if session['bet'] <= session['Bankroll']:
             session['Bankroll'] = session['Bankroll'] - session['bet']
 
             tirage1, deck_apres_1er_tirage = premier_tirage(session['deck'])
             session['tirage1'] = tirage1
             session['deck_apres_1er_tirage'] = deck_apres_1er_tirage
-
-
 
             return redirect(url_for('play_2'))
 
@@ -62,16 +61,19 @@ def play():
 
 
 
+
+
 @app.route('/play_2', methods=['GET','POST'])
 def play_2():
     if request.method == "POST":
         session['i'] = request.form.getlist('i')
-        
         return redirect(url_for('deuxieme_tirage'))
-        
-
 
     return render_template('play_2.html')
+
+
+
+
 
 @app.route('/deuxieme_tirage', methods=['GET','POST'])
 def deuxieme_tirage(): 
@@ -80,21 +82,25 @@ def deuxieme_tirage():
     tiragedeux = random.sample(session['deck'], carteAtirer)
     session['tirageFinal'] = session['i'] + tiragedeux
     
-    print(session['tirageFinal']) 
+    print(session['tirageFinal'])
     return render_template('deuxieme_tirage.html')
     
+
+
+
+
+
+
+
+
+
 @app.route('/a')
 def a():
     session.clear()
     return redirect(url_for('index'))
 
-#@app.route('/logout', methods=['GET'])
 
-#def logout():
-#    if session['id'] != None:
-#        session['id'] = None
-#        return redirect('/', 302)
-#    else:
-#       return redirect('/', 302)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
