@@ -64,15 +64,10 @@ def play():
 
 @app.route('/play_2', methods=['GET','POST'])
 def play_2():
-    session['choix1'] = request.form.get('choix_carte')
     if request.method == "POST":
-        jeu_1 = choix_carte(session['deck'])
-        session['jeu'] = jeu_1
-
-
-        for session['carte'] in session['tirage1']:
-            if session['choix1'] == "y":
-                session['jeu'].append(session['carte'])
+        session['i'] = request.form.getlist('i')
+        print(session['i'])
+        
 
 
     return render_template('play_2.html')

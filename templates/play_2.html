@@ -18,29 +18,23 @@
     </div>
     {% endif %}
 
+    <form method="POST">
     <div class="card-playground">
         {% for i in session['tirage1'] %}
         <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-        {% endfor %}
+	<input type="checkbox" id="{{i}}" name="i" value="{{i}}">
+	{% endfor %}
+        <input class="btn" id="input-btn" type="submit" value="Play">
     </div>
+   </form>
 
     <br>
 
     <br>
-    <form method="POST">
         <br>
 
         <input type="text" name="choix_carte" placeholder="Garder la carte?">
         
-        {% for carte in session['jeu'] %}
-        {{carte}}
-
-        {% if session['choix1'] == "y" %}
-        {{session['jeu'].append(session['carte'])}}
-
-
-        {% endif %}
-        {% endfor %}
         <br>
 
         <div>
@@ -48,7 +42,5 @@
         </div>
         <br>
 
-        <input class="btn" id="input-btn" type="submit" value="Play">
-    </form>
 </body>
 </html>
