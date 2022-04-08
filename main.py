@@ -16,11 +16,11 @@ def premier_tirage(deck):
 def choix_carte(tirage1):
     jeu = []
 
-    for carte in tirage1:
+    """ for carte in tirage1:
         choix1 = input("\nGarder la carte "+carte+"? (y/n)\n")
         
         if choix1 == "y":
-            jeu.append(carte)
+            jeu.append(carte) """
     
     return jeu
 
