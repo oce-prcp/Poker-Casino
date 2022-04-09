@@ -96,7 +96,7 @@ def deuxieme_tirage():
     print(session['gain'])
     print(session['result'])
 
-    session['bankroll'] = session['Bankroll'] + session['gain']
+    session['bankroll'] = session['bankroll'] + session['gain']
     return render_template('deuxieme_tirage.html')
 
 
