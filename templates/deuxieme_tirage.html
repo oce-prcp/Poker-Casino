@@ -24,11 +24,23 @@
         {% for i in session['tirageFinal'] %}
         <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
         {% endfor %}
+        <div>
+            <h3>Vous avez une {{session['result']}}</h3>
+            <h3>Votre bankroll est de {{session['bankroll']}}€</h3>
+        </div>
     </div>
 
     <div>
         <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
     </div>
+
+    <btn class="btn" onclick="window.location.href='{{ url_for('a')}}';">OUI</btn>
+
+    <a href="https://www.google.com">
+        <btn class="btn">NON</btn>
+    </a>
+    <!-- Si le "a" est sous-ligné c'est normal, c'est une erreur JavaScript. -->
+
     <br>
 {% endblock %}
 </body>

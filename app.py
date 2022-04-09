@@ -83,24 +83,27 @@ def deuxieme_tirage():
     session['tirageFinal'] = session['i'] + tiragedeux
     
     print(session['tirageFinal'])
+
+    valeur, couleur = decomp(session['tirageFinal'])
+    session['valeur'] = valeur
+    session['couleur'] = couleur
+    print(session['valeur'])
+    print(session['couleur'])
+
+    gain, result = combinaisons(session['tirageFinal'],session['bet'])
+    session['gain'] = gain
+    session['result'] = result
+    print(session['gain'])
+    print(session['result'])
+
+    session['bankroll'] = session['Bankroll'] + session['gain']
     return render_template('deuxieme_tirage.html')
-    
-
-
-
-
-
-
-
 
 
 @app.route('/a')
 def a():
     session.clear()
     return redirect(url_for('index'))
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
