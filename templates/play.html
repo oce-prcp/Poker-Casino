@@ -8,7 +8,7 @@
     <title>Play Poker</title>
 </head>
 <body>
-    <h1 class="title-t">Welcome to <span class="title">IPSSI Poker</span></h1>
+    <h1 class="title-t">Bienvenue au <span class="title">IPSSI Poker</span></h1>
     <div class="header-playground">
     </div>
     <br>
@@ -35,15 +35,19 @@
 
     <br>
     <form method="POST">
-        <input class="bet-input" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
+        <div class="input-group mb-3 center-block" style="max-width: 700px;">
+            <input class="bet-input form-control" name="bet" type="number" min="1" placeholder="Entre le montant de ta mise" required>
+            <div class="input-group-prepend">
+                <button class="btn" id="input-btn" type="submit" value="Play">Play</button>
+            </div>
+        </div>
+            
         <br>
 
         <div class="mise-style">
             <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
         </div>
         <br>
-
-        <input class="btn" id="input-btn" type="submit" value="Play">
     </form>
 </body>
 </html>

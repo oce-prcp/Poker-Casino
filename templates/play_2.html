@@ -23,19 +23,19 @@
     <form method="POST">
         <div class="card-playground">
             {% for i in session['tirage1'] %}
-            <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-	        <input type="checkbox" id="{{i}}" name="i" value="{{i}}">
+                <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
+	            <input type="checkbox" id="{{i}}" name="i" value="{{i}}">
 	        {% endfor %}
-            <input class="btn" id="input-btn" type="submit" value="Play">
+        </div>
+
+        <div class="center-block">
+            <input class="btn" id="input-btn" type="submit" value="Play" style="margin: auto;">
         </div>
     </form>
 
     <br>
-    <br>
-    <br>
-    <br>
-
-    <div>
+    
+    <div class="mise-style">
         <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
     </div>
 
