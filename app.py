@@ -97,8 +97,13 @@ def deuxieme_tirage():
     print(session['result'])
 
     session['Bankroll'] = session['Bankroll'] + session['gain']
+    if session['Bankroll'] <= 0 :
+        return redirect(url_for('Lose'))
     return render_template('deuxieme_tirage.html')
 
+@app.route('/Lose')
+def Lose():
+    return render_template('Lose.html')
 
 @app.route('/a')
 def a():
