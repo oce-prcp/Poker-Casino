@@ -1,29 +1,29 @@
-body{
+body {
 	background-color: #1a2332!important;
 	color: white !important;
 }
 
 
-.title{
+.title {
 	text-align: center;
 	color: #9fef00!important;
 }
 
-.title-t{
+.title-t {
 	text-align: center;
 	border-bottom: 2px solid #9fef00;
 	text-shadow: 3px 2px 2px #9fef007e;
 }
 
 
-.centre{
+.centre {
 	position: relative;
 	left: 50%;
 }
 
 
 
-input{
+input {
 	display: block;
 	font-size: 15px;
 	padding: 5px;
@@ -31,18 +31,18 @@ input{
 	height: auto;
 }
 
-label{
+label {
 	display: block;
 	font-size: 20px;
 	padding: 5px;
 	color: #fff;
 
 }
-#age{
+#age {
 	background-color: #fff;
 }
 
-#sexe{
+#sexe {
 	background-color: #fff;
 }
 
@@ -82,7 +82,7 @@ label{
 	justify-content: center;
 }
 
-.cards-play_2{
+.cards-play_2  {
 	display: inline;
 }
 
@@ -111,7 +111,7 @@ label{
 	color: #fff;
 }
 
-.center-block{
+.center-block {
 	display: table;  /* Instead of display:block */
     margin-left: auto;
     margin-right: auto;
@@ -131,4 +131,9 @@ label{
 	margin-left: auto;
 	margin-right: auto;
 	color: #9fef00;
+}
+
+.copyright {
+	font-size: 13px;
+	text-align: center;
 }

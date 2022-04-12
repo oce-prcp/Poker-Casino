@@ -17,20 +17,23 @@
     {% endif %}
 
     <div class="header-playground">
-        <h1>Voici votre main finale:</h1>
+        <h1 style="text-align: center; color: #9fef00">Voici votre main finale :</h1>
     </div>
-
+    <br>
+    <br>
     <div class="card-playground">
         {% for i in session['tirageFinal'] %}
         <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
         {% endfor %}
         <div>
+            <br>
             <h3>{{session['result']}}</h3>
             <h3>Votre bankroll est de {{session['Bankroll']}}€</h3>
         </div>
     </div>
 
     <div>
+        <br>
         <p>Mise: {{session['bet']}}€   |   Bankroll: {{session['Bankroll']}}€</p>
     </div>
 
