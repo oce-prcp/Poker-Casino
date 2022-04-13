@@ -18,16 +18,22 @@
     </div>
     {% endif %}
 
-    <h1 style="font-size: 28px; color: #9fef00;">Choisissez les cartes à garder :</h1>
-
+    <center><h1 style="font-size: 28px; color: #9fef00;">Choisissez les cartes à garder :</h1></center>
+    <div class="clearfix"></div>
     <form method="POST">
-        <div class="card-playground">
-            {% for i in session['tirage1'] %}
-                <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/>
-	            <input type="checkbox" id="{{i}}" name="i" value="{{i}}">
-	        {% endfor %}
-        </div>
 
+        <div class="container">
+            <div class="row justify-content-md-center">
+                {% for i in session['tirage1'] %}
+                <div style="margin-right: -120px;" class="col-lg-2 col-md-2">
+                    <img src="{{ url_for('static', filename='cards/'+i+'.png')}}" alt="card-back-video-poker"/><br>
+                    <input type="checkbox" id="{{i}}" name="i" value="{{i}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
         <div class="center-block">
             <input class="btn" id="input-btn" type="submit" value="Jouer" style="margin: auto;">
         </div>

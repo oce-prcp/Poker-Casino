@@ -79,11 +79,14 @@ label {
 .card-playground {
 	text-align: center;
 	display: block;
-	justify-content: center;
 }
 
 .cards-play_2  {
 	display: inline;
+}
+
+.clearfix {
+	margin-top: 30px;
 }
 
 .card-img {
