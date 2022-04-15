@@ -20,19 +20,19 @@ def index():
     session['Bankroll'] = int(request.form.get('bankroll'))
 
     sexes = ["femme", "homme"]
-    
-    session['erreur_index'] = False
+    erreur_index = ""
+    session['erreur_index'] = erreur_index
     
     if sexe.lower() in sexes:
         if age >= 18:
             if session['Bankroll'] >= 1:
                 return redirect('/play', 302)
             else:
-                return render_template('index.html', message="Faites pas le clochard")
+                return render_template('index.html', erreur_index="Faites pas le clochard")
         else:
-            return render_template('index.html', message="Vous n'êtes pas majeur")
+            return render_template('index.html', erreur_index="Vous n'êtes pas majeur")
     else:
-        return render_template('index.html', message="Les autres genres ne sont pas acceptés")
+        return render_template('index.html', erreur_index="Les autres genres ne sont pas acceptés")
 
 #------------------------------PAGE PLAY---------------------------
 @app.route('/play',methods=['GET','POST'])
